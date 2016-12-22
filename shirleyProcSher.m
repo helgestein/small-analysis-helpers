@@ -4,7 +4,7 @@ function bg = shirleyProcSher(y,iterations)
     y = smooth(y,'sgolay',3); %smoothing the data
     a = y(1); %first element 
     b = y(end); %last element
-    u = linspace(a,b,len).'; %initial guess for the background
+    u = linspace(a,a,len).'; %initial guess for the background
     
     for k=1:iterations
          for i = 1:len-1
