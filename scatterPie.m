@@ -6,7 +6,7 @@ function scatterPie(pos, pieDist, colors)
 x = (pos(:,1)-min(pos(:,1)))./max(pos(:,1)-min(pos(:,1)));
 y = (pos(:,2)-min(pos(:,2)))./max(pos(:,2)-min(pos(:,2)));
 
-%colors = [0,1,0; 1,0,0; 0,0,1; 0.5,0.5,1; 1,0,1];
+colors = [0,1,0; 1,0,0; 0,0,1; 0.5,0.5,1; 1,0,1];
 
 hold on
 
@@ -18,7 +18,7 @@ for i=1:length(x)
         vec(k) = vec(k)+vec(k-1);
     end
     %plot piecharts
-    for k=1:3
+    for k=1:4
         %matlabs own function was not useful
         %so i wrote my own pie chart plotting function
         %without the clutter

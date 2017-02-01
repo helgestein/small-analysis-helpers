@@ -1,4 +1,4 @@
-function [x,y] = pieplo(startAngle, endAngle, center, radius ,color)
+function [x,y] = pieploScat(startAngle, endAngle, center, radius ,color)
     %center 2D vec
     %radius = 1 ?
     %color 3tupel
@@ -8,10 +8,13 @@ function [x,y] = pieplo(startAngle, endAngle, center, radius ,color)
     end
  
     for i = floor(startAngle):floor(endAngle)
-        p(i+1,:) = [radius*sin((i)*pi/180) , radius*cos(i*pi/180)] + center;
+        p(i+1,:) = radius*sin(i*pi/180) + center(1)
+        p(i+1,:) = radius*cos(i*pi/180) + center(2);
     end
+    center
 
-    p(i+1,:) = center;
+    p(i+1,1) = center(1);
+    p(i+1,2) = center(2);
 
     x = p(:,1);
     y = p(:,2);
