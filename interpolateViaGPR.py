@@ -5,7 +5,7 @@ Created on Wed Aug 23 20:15:10 2017
 
 @author: Helge S. Stein
 """
-#this script uses this paper:
+# this script is motivated by this paper:
 # Statistical analysis and interpolation of compositional data in materials science.
 # by Pesenson MZ, Suram SK, Gregoire JM.
 # ACS Comb Sci. 2015 Feb 9;17(2):130-6. doi: 10.1021/co5001458.
