@@ -1,0 +1,15 @@
+#python implementation of the Sonnveld Visser Algorithm described here: https://journals.iucr.org/j/issues/1975/01/00/a12580/a12580.pdf
+import numpy as np
+def xrdbg(input,c = 0.5,kmax = 30):
+    def passthrough(inp):
+        inputc = np.copy(inp)
+        m = np.zeros(len(inputc)-1)
+        for k in range(1,kmax): #number of iterations
+            for l in range(1,len(inputc)-1): #go through all p_l
+                m[l-1] = 0.5*inputc[l-1]+0.5*inputc[l+1]
+            for l in range(1,len(inputc)-1): #check if larger according to Sonneveld & Visser 1975
+               #adaptive curvature
+                if inputc[l]>m[l]+c:
+                    inputc[l]=m[l]
+        return np.copy(inputc)
+    return passthrough(input)
